@@ -8,6 +8,7 @@ export interface OpenAIModel {
 }
 
 export enum OpenAIModelID {
+  GPT_4o = 'gpt-4o',
   GPT_3_5 = 'gpt-3.5-turbo',
   GPT_3_5_AZ = 'dummy',
   GPT_4 = 'gpt-4-1106-preview',
@@ -18,6 +19,12 @@ export enum OpenAIModelID {
 export const fallbackModelID = OpenAIModelID.GPT_3_5;
 
 export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
+  [OpenAIModelID.GPT_4o]: {
+    id: OpenAIModelID.GPT_4o,
+    name: 'GPT-4o',
+    maxLength: 48000,
+    tokenLimit: 24000,
+  },
   [OpenAIModelID.GPT_3_5]: {
     id: OpenAIModelID.GPT_3_5,
     name: 'GPT-3.5',
